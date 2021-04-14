@@ -1,0 +1,39 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div *ngFor="let question of questions" class="form-row">
+      <app-question [question]="question" [form]="form"></app-question>
+    </div>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Kaydet</button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>İşleminiz Başarılı Bir Şekilde Kaydedildi</strong><br>{{payLoad}}
+  </div>
+</div>
+
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>İsim</th>
+      <th>Email</th>
+      <th>Cinsiyet</th>
+      <th>Resim Yolu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.id }}</td>
+      <td>{{ post.fullName }}</td>
+      <td>{{ post.email }}</td>
+      <td *ngIf="post.gender == 0">Erkek</td>
+      <td *ngIf="post.gender == 1">Kadın</td>
+      <td *ngIf="post.gender == 2">Diğer</td>
+      <td>{{ post.imgPath }}</td>
+    </tr>
+  </tbody>
+</table>

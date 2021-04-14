@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=188.121.44.214;Initial Catalog=ArdTest;User ID=ahmet;Password=Sc5qz63@;Connect Timeout=30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domain
